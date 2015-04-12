@@ -7,10 +7,25 @@
 <% end %>
 <hr>
 <nav>
+	<%
+	if params[:status] == "Wait"
+		a_class = ""
+		w_class = "active"
+		c_class = ""
+	elsif params[:status] == "Complete"
+		a_class = ""
+		w_class = ""
+		c_class = "active"
+	else
+		a_class = "active"
+		w_class = ""
+		c_class = ""
+	end
+	%>
 	<ul>
-		<li><%=link_to "All",{action: "index"}%></li>
-		<li><%=link_to "Wait",{action: "index",status: "Wait"}%></li>
-		<li><%=link_to "Complete",{action: "index",status: "Complete"}%></li>
+		<li class=<%=a_class%>><%=link_to "All",{action: "index"}%></li>
+		<li class=<%=w_class%>><%=link_to "Wait",{action: "index",status: "Wait"}%></li>
+		<li class=<%=c_class%>><%=link_to "Complete",{action: "index",status: "Complete"}%></li>
 	</ul>
 </nav>
 <div class="content">
