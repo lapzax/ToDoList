@@ -1,0 +1,49 @@
+<h1> ToDoList Index</h1>
+<%=form_tag("todolist",method:"post") do %>
+<div class="NewToDo">
+	Content <%= text_field_tag :content %>
+	<%= submit_tag "New" %>
+</div>
+<% end %>
+<hr>
+<nav>
+	<ul>
+		<li><%=link_to "All",{action: "index"}%></li>
+		<li><%=link_to "Wait",{action: "index",status: "Wait"}%></li>
+		<li><%=link_to "Complete",{action: "index",status: "Complete"}%></li>
+	</ul>
+</nav>
+<div class="content">
+	<table >
+
+		<tr>
+			<th class="cTitle">Content</th>
+			<th class="cStatus">Status</th>
+			<th class="cMange">Option</th>
+		</tr>
+		<% @List.each do |item| %>
+		<%
+			status = item.status
+			if status ==  "complete"
+				btn_name = "Complete"
+				btn_class = "Complete"
+				content_class = "Complete"
+			else
+				btn_name = "Wait"
+				btn_class = "Wait"
+				content_class = "Wait"
+			end
+		%>
+		<tr>
+		<td class='<%=content_class%>'><%=item.content%></td>
+		<td style="text-align:center">
+			<%=button_to btn_name,{ action: "iscomplete", id: item.id},class: btn_class %>
+		</td>
+		<td style="text-align:center">
+			<%=button_to "Edit",{ action: "edit",id: item.id },method: :get %>
+			<%=button_to "Delete",{action: "destroy",id: item.id},method: :delete %>
+		</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

@@ -1,0 +1,63 @@
+// Place all the styles related to the todolist controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Complete{
+	color : black;
+	background-color: green;
+	border-radius: 5px;
+}
+
+.Wait{
+	color:white;
+	background-color: red;
+	border-radius: 5px;
+}
+
+nav{
+	ul{
+		padding: 0;
+		
+		li{
+			width: 100px;
+			background-color: gray;
+			display: inline;
+			text-align: center;
+			border: 5px #0066FF solid;
+			border-radius: 5px;
+			a{
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.content{
+	table{
+		border: 2px #ccc solid ;
+		border-radius: 5px;
+		border-collapse: separate;
+		th{
+			border:  2px #ccc solid;
+			border-bottom: 5px #ccc solid;
+			border-radius: 20px;
+		}
+		tr td{
+			padding: 5px;
+			border: 2px #ccc solid;
+			border-radius: 10px;
+			form{
+				display: inline;
+			}
+		}
+	}
+	.cTitle{
+		width:500px;
+	}
+	.cStatus{
+		width: 100px;
+	}
+	.cMange{
+		width: 150px;
+	}
+}
