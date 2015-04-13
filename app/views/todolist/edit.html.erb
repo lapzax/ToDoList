@@ -1,7 +1,7 @@
-<h1>Edit Page</h1>
+<h1>待辦事項編輯頁面</h1>
 
 <%= form_for @List do |item| %>
-	<%= item.label :conten%>
+	<%= item.label :"內容"%>
 	<%= item.text_field :content%>
-	<%= item.submit "Update"%>
+	<%= item.submit "更新"%>
 <% end %>
