@@ -1,7 +1,6 @@
 class TodolistController < ApplicationController
 	def index 
 		@List  = Todolist.all
-		puts params[:status]
 		if params[:status].present?
 			if params[:status] == "Wait"
 				@List = @List.where("status = ?","wait")
@@ -9,7 +8,6 @@ class TodolistController < ApplicationController
 				@List = @List.where("status = ?","complete")
 			end
 		end
-			
 	end
 
 	def create
