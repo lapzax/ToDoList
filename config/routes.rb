@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :todolist do
     member do
       post :iscomplete
